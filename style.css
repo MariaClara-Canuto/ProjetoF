@@ -1,0 +1,67 @@
+/*configuração*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', 'Courier', 'monospace';
+    font-size: 12px;
+    color: #d8e1f0;
+    background-color: #01000a;
+}
+
+/*nav-bar*/
+.header {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #e6e1f7;
+    background-color: #0d0c0f;
+}
+
+
+.img-Elmo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    margin-right: 10px;
+    width: 75px;
+    height: auto;
+}
+
+.img-Nome {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 125px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    flex-grow: 1; /* Faz a nav crescer e ocupar o espaço restante */
+    justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    list-style-type: none; /* Remove os marcadores de lista */
+    margin: 0;
+    padding-right: 150px;
+}
+
+li {
+    margin-left: 10px;
+}
+
+a {
+    color:#d8e1f0;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover {
+    color: #d0830f;
+}
