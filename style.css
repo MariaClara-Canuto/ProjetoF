@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Courier New', 'Courier', 'monospace';
-    font-size: 12px;
+    font-size: 13.5px;
     color: #d8e1f0;
     background-color: #01000a;
 }
@@ -40,14 +40,14 @@ body {
 
 nav {
     display: flex;
-    flex-grow: 1; /* Faz a nav crescer e ocupar o espaço restante */
-    justify-content: flex-end; /* Alinha os itens à direita */
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
 ul {
     display: flex;
-    justify-content: flex-end; /* Alinha os itens à direita */
-    list-style-type: none; /* Remove os marcadores de lista */
+    justify-content: flex-end;
+    list-style-type: none;
     margin: 0;
     padding-right: 150px;
 }
@@ -59,9 +59,11 @@ li {
 a {
     color:#d8e1f0;
     text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
     padding: 10px;
 }
 
 a:hover {
+    opacity: 1;
     color: #d0830f;
 }
