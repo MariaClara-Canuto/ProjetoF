@@ -42,7 +42,9 @@ nav {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    align-items: center;
 }
+
 
 ul {
     display: flex;
@@ -50,20 +52,65 @@ ul {
     list-style-type: none;
     margin: 0;
     padding-right: 150px;
+    align-items: center;
 }
 
 li {
     margin-left: 10px;
 }
 
-a {
+.a_Sign {
     color:#d8e1f0;
     text-decoration: none;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    transition: color 0.2s ease-out, opacity 0.2s ease;
+    transition: transform 0.2s ease;
     padding: 10px;
 }
 
-a:hover {
+.a_Sign:hover {
     opacity: 1;
     color: #d0830f;
+    cursor: pointer;
+}
+
+.button_Log {
+    padding: 10px;
+    font-family: 'Courier New', 'Courier', 'monospace';
+    font-size: 13.5px;
+    color: #d8e1f0;
+    background-color: #d0830f;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transition: background-color 0.7s ease, opacity 0.2s ease-out ;
+}
+
+.button_Log:hover {
+    transform: scale(1.05);
+    background-color: #d05c0f;
+}
+
+/* Intro config */
+
+.containerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 300px;
+    padding-top: 100px;
+}
+
+.rightTitle {
+    font-family: 'Courier New', 'Courier', 'monospace';
+    text-align: right;
+    font-size: 70px;
+    margin: 0;
+}
+
+.complimentaryText {
+    margin: 20px 0 0 0;
+    font-family: 'Courier New', 'Courier', 'monospace';
+    text-align: right;
+    font-size: 30px;
 }
