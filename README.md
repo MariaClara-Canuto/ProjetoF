@@ -1,4 +1,10 @@
-# ProjetoF
-Protótipo do Projeto Final de OO.
+# Bmvc
 
-Aqui há, por enquanto, o arquivo html index do site, um arquivo css e um diretório de imagens que serão implementados ao BMVC em breve. Por enquanto, não há nenhum conteúdo, somente o heading do site.
+## Trabalhando com o BMVC no BASH:
+
+1. Executar o arquivo 'route.py', na raiz do projeto.
+
+## Trabalhando com o BMVC no DOCKER:
+
+1. $ docker build -t bmvci .
+1. $ docker run -d -p 8080:8080 -v $(pwd):/app bmvci
