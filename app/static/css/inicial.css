@@ -7,8 +7,8 @@
 body {
     font-family: 'Courier New', 'Courier', 'monospace';
     font-size: 13.5px;
-    color: #d8e1f0;
-    background-color: #01000a;
+    color: #ABB2BD;
+    background-color: #292A2D;
 }
 
 /*nav-bar*/
@@ -17,8 +17,8 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #e6e1f7;
-    background-color: #0d0c0f;
+    color: #ABB2BD;
+    background-color: #1c1d20;
 }
 
 
@@ -159,7 +159,7 @@ li {
     width: 400px;
     height: 250px;
     padding-bottom: 20px;
-    background-color:  #0a0a11;
+    background-color:  #18181d;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
@@ -184,7 +184,11 @@ li {
 /*footer config*/
 
 .footerIndex {
-    background-color: #993e14;
+    background-color: #d05c0f;
     padding: 15px 0;
     text-align: center;
+}
+
+.pfooter {
+    color:#d8e1f0
 }
