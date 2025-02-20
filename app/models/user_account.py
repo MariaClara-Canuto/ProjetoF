@@ -15,7 +15,7 @@ class SuperAccount(UserAccount):
         super().__init__(username, password)
         self.permissions= permissions
         if not permissions:
-            self.permissions= ['user']
+            self.permissions = ['user']
 
     def isAdmin(self):
         return True
