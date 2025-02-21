@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome, {{ username }}!</h1>
+
+{% if users.get(username, {}).get('is_special', False) %}
+    <a href="{{ url_for('post') }}">Create a Post</a>
+{% endif %}
+
+<h2>Posts</h2>
+{% if posts %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <strong>{{ post.username }}</strong>: {{ post.content }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts yet.</p>
+{% endif %}
+{% endblock %}
