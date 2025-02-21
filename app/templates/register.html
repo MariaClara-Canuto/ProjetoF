@@ -1,17 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Register</h1>
-<form method="POST">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    
-    <label for="special_key">Special Key (optional):</label>
-    <input type="password" id="special_key" name="special_key">
-    
-    <button type="submit">Register</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="FireFox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='img/HelmetTigas.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+
+    <div class="login-container">
+
+        <div>
+            <img src="{{ url_for('static', filename='img/TextTitans_ModernW.svg') }}" alt="Elmo" class="img-Elmo">
+            
+        </div>
+
+        <form class="login-form" method="POST">
+            <div class="input-group">
+                <label for="username">
+                    <h1>Seu Usuário<br></h1>
+                </label>
+                <input type="text" id="username" name="username" placeholder="Digite um nome de usuário" required>
+            </div>
+        
+            <div class="input-group">
+                <label for="password">
+                    <h1>Sua Senha<br></h1>
+                </label>
+                <input type="password" id="password" name="password" placeholder="Digite uma senha secreta" required>
+            </div>
+
+            <div class="input-group">
+                <label for="special_key">Key Única (Opicional)</label>
+                <input type="password" id="special_key" name="special_key" placeholder="Digite a key se você tiver uma">
+            </div>
+        
+            <div class="input-group">
+                <p>Já tem conta? </p><a href="{{ url_for('login') }}">Entre! </a>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
 {% endblock %}

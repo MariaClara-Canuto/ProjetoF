@@ -1,0 +1,249 @@
+/*configuração*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', 'Courier', 'monospace';
+    font-size: 13.5px;
+    color: #ABB2BD;
+    background-color: #292A2D;
+}
+
+/*nav-bar*/
+.header {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ABB2BD;
+    background-color: #1c1d20;
+}
+
+
+.img-Elmo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    margin-right: 10px;
+    width: 75px;
+    height: auto;
+}
+
+.img-Nome {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 125px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding-right: 150px;
+    align-items: center;
+}
+
+li {
+    margin-left: 10px;
+}
+
+.a_Sign {
+    color:#d8e1f0;
+    text-decoration: none;
+    transition: color 0.2s ease-out, opacity 0.2s ease;
+    transition: transform 0.2s ease;
+    padding: 10px;
+}
+
+.a_Sign:hover {
+    opacity: 1;
+    color: #d0830f;
+    cursor: pointer;
+}
+
+.button_Log {
+    padding: 10px;
+    font-family: 'Courier New', 'Courier', 'monospace';
+    font-size: 13.5px;
+    color: #d8e1f0;
+    background-color: #d0830f;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transition: background-color 0.7s ease, opacity 0.2s ease-out ;
+}
+
+.button_Log:hover {
+    transform: scale(1.05);
+    background-color: #d05c0f;
+}
+
+/* Intro config */
+
+.containerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 300px;
+    padding-top: 100px;
+}
+
+.welcome {
+    font-family: 'Courier New', 'Courier', 'monospace';
+    text-align: left;
+    font-size: 70px;
+    margin-top: 100px;
+}
+
+.create-post {
+    margin-bottom: 20px;
+}
+
+.create-post a {
+    color: #d0830f;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.create-post a:hover {
+    text-decoration: underline;
+}
+
+/*postdisplay config*/
+
+.main-content {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Cabeçalho com "Posts" e botão "Create Post" */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.posts-title {
+    font-size: 24px;
+    color: #d0830f;
+    margin: 0;
+}
+
+.create-post-button {
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #d0830f;
+    color: #d8e1f0;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.create-post-button:hover {
+    background-color: #d05c0f;
+}
+
+/* Estilos para a lista de posts */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os posts */
+}
+
+/* Estilos para cada post */
+.post-item {
+    background-color: #1c1d20; /* Fundo escuro para cada post */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.post-item strong {
+    color: #d0830f; /* Cor laranja para o nome do autor */
+    font-size: 16px; /* Tamanho da fonte */
+    display: block; /* Faz o nome do autor ocupar uma linha inteira */
+}
+
+.post-item p {
+    margin: 10px 0 0 0; /* Espaçamento entre o autor e o conteúdo */
+    color: #ABB2BD; /* Cor do texto */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Comentários */
+.comments-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #444; /* Linha separadora */
+}
+
+.comment {
+    font-size: 14px;
+    color: #ABB2BD;
+    margin-bottom: 10px;
+}
+
+.comment strong {
+    color: #d0830f; /* Cor laranja para o nome do autor do comentário */
+}
+
+/* Formulário de comentário */
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #292A2D;
+    color: #ABB2BD;
+}
+
+.comment-button {
+    padding: 8px 16px;
+    background-color: #d0830f;
+    color: #d8e1f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+    background-color: #d05c0f;
+}
+
+/*footer config*/
+
+.footerIndex {
+    background-color: #d05c0f;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.pfooter {
+    color:#d8e1f0
+}

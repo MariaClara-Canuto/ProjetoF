@@ -22,5 +22,9 @@
     "erik": {
         "password": "$2b$12$NlJ4Cuo11zWZGDlkWeIJvO0NGA5I8xPhC3KaJISpbIUrbN7A6YoGG",
         "is_special": false
+    },
+    "Maria": {
+        "password": "$2b$12$rzG.rv6l49llLkQWP0WujeUzHDqx2hOyzr8TKm9MdsbjOuuPnecjG",
+        "is_special": true
     }
 }
