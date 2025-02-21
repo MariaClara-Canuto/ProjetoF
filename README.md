@@ -20,30 +20,30 @@ Este é um projeto de um sistema de postagens desenvolvido com **Flask**, onde u
 - **JSON** (para armazenamento de usuários e posts)
 
 # 📂 Estrutura do Projeto
-
+```
 Projeto Final/
-│-- app/
-│   │-- static/
-│   │   │-- css/
-│   │   │   ├── styles.css
-│   │   │-- js/
-│   │   │   ├── main.js
+│-- app/ 
+│   │-- static/ 
+│   │   │-- css/ 
+│   │   │   ├── styles.css 
+│   │   │-- js/ 
+│   │   │   ├── main.js 
 │   │-- templates/
 │   │   ├── base.html
-│   │   ├── home.html
-│   │   ├── login.html
-│   │   ├── post.html
-│   │   ├── register.html
-│   │-- __init__.py
-│   │-- models.py
-│   │-- routes.py
-│   │-- socketio.py
-│-- users.json
-│-- posts.json
-│-- requirements.txt
-│-- run.py
-│-- venv/
-
+│   │   ├── home.html 
+│   │   ├── login.html 
+│   │   ├── post.html 
+│   │   ├── register.html 
+│   │-- __init__.py 
+│   │-- models.py 
+│   │-- routes.py 
+│   │-- socketio.py 
+│-- users.json 
+│-- posts.json 
+│-- requirements.txt 
+│-- run.py 
+│-- venv/ 
+```
 
 # ⚙️ Como Rodar o Projeto
 ## 1️⃣ Clonar o repositório
