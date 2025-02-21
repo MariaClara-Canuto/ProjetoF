@@ -127,12 +127,14 @@ def post():
         return redirect(url_for('home'))
     
     if request.method == 'POST':
+        post_title = request.form['post_title']
         post_content = request.form['post_content']
         
         posts = load_posts()
         posts.append({
             'id': str(uuid.uuid4()),
             'username': username,
+            'title': post_title,
             'content': post_content,
             'comentarios': []
         })

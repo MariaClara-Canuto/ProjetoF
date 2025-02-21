@@ -40,7 +40,8 @@
         <div class="posts-container">
             {% for post in posts %}
                 <div class="post-item">
-                    <strong>{{ post.username }}</strong>
+                    <strong>{{ post.title }}</strong>
+                    <h3>{{ post.username }}</h3>
                     <p>{{ post.content }}</p>
 
                     <!-- Comentários -->
@@ -56,8 +57,8 @@
 
                     <!-- Formulário de comentário -->
                     <form id="form-comentario-{{ post.id }}" onsubmit="return false;" class="comment-form">
-                        <input type="text" id="comentario-{{ post.id }}" placeholder="Add a comment" class="comment-input">
-                        <button type="button" onclick="enviarComentario('{{ post.id }}')" class="comment-button">Comment</button>
+                        <input type="text" id="comentario-{{ post.id }}" placeholder="Adicione um comentário" class="comment-input">
+                        <button type="button" onclick="enviarComentario('{{ post.id }}')" class="comment-button">Comente!</button>
                     </form>
                 </div>
             {% endfor %}
