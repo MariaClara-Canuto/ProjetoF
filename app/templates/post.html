@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="FireFox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Creation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+</head>
+
+<div class="header">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='img/HelmetTigas.png') }}" alt="Elmo" class="img-Elmo">
+        <img src="{{ url_for('static', filename='img/TextTitans_Modern.png') }}" alt="Nome" class="img-Nome">
+    </div>
+
+    <nav>
+        <ul>
+            <li> 
+                <form action="{{ url_for('logout') }}" method="POST">
+                    <button type="submit" class="button_Log">Log-out</button>
+                </form> 
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="main-content">
+    <h1 class="welcome">Crie um Post!</h1>
+
+    <form method="POST" class="post-form">
+        <label for="post_title" class="post-label">Titúlo</label>
+        <input type="text" id="post_title" name="post_title" required class="post-input">
+
+        <label for="post_content" class="post-label">Conteúdo</label>
+        <textarea id="post_content" name="post_content" rows="4" cols="50" required class="post-textarea"></textarea>
+        
+        <div class="form-buttons">
+            <button type="submit" class="post-button">Publicar</button>
+            <a href="{{ url_for('home') }}" class="back-button">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer class="footerIndex">
+        <h3>Titans Blog</h3>
+    </footer>
+</div>
+{% endblock %}

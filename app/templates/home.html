@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="FireFox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<div class="header">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='img/HelmetTigas.png') }}" alt="Elmo" class="img-Elmo">
+        <img src="{{ url_for('static', filename='img/TextTitans_Modern.png') }}" alt="Nome" class="img-Nome">
+    </div>
+
+    <nav>
+        <ul>
+            <li> 
+                <form action="{{ url_for('logout') }}" method="POST">
+                    <button type="submit" class="button_Log">Log-out</button>
+                </form> 
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="main-content">
+    <h1 class="welcome">Bem vind@, {{ username }}!</h1>
+
+    <h2 class="posts-title">Posts</h2>
+    {% if users.get(username, {}).get('is_special', False) %}
+    <form action="{{ url_for('post') }}" method="GET">
+        <button type="submit" class="create-post-button">Crie um Post!</button>
+    </form>
+    {% endif %}
+
+    {% if posts %}
+        <div class="posts-container">
+            {% for post in posts %}
+                <div class="post-item">
+                    <strong>{{ post.title }}</strong>
+                    <h3>{{ post.username }}</h3>
+                    <p>{{ post.content }}</p>
+
+                    <!-- Comentários -->
+                    <div id="comentarios-{{ post.id }}" class="comments-section">
+                        {% if post.comentarios %}
+                            {% for comentario in post.comentarios %}
+                                <div class="comment">
+                                    <strong>{{ comentario.username }}</strong> {{ comentario.comentario }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Formulário de comentário -->
+                    <form id="form-comentario-{{ post.id }}" onsubmit="return false;" class="comment-form">
+                        <input type="text" id="comentario-{{ post.id }}" placeholder="Adicione um comentário" class="comment-input">
+                        <button type="button" onclick="enviarComentario('{{ post.id }}')" class="comment-button">Comente!</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No posts yet.</p>
+    {% endif %}
+</div>
+
+<div>
+    <footer class="footerIndex">
+        <h3>Titans Blog</h3>
+    </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    // Função para enviar um comentário
+    function enviarComentario(postId) {
+        const comentario = document.getElementById(`comentario-${postId}`).value;
+        if (comentario.trim() === '') return;
+
+        socket.emit('comentar', {
+            post_id: postId,
+            comentario: comentario
+        });
+
+        document.getElementById(`comentario-${postId}`).value = '';
+    }
+
+    // Receber novos comentários
+    socket.on('novo_comentario', function(data) {
+        const comentariosDiv = document.getElementById(`comentarios-${data.post_id}`);
+        const novoComentario = document.createElement('div');
+        novoComentario.className = 'comment';
+        novoComentario.innerHTML = `<strong>${data.username}</strong>: ${data.comentario}`;
+        comentariosDiv.appendChild(novoComentario);
+    });
+</script>
+</div>
+{% endblock %}
