@@ -1,5 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome, {{ username }}!</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="FireFox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+
+<div class="header">
+    <img src="{{ url_for('static', filename='img/HelmetTigas.png') }}" alt="Elmo" class="img-Elmo">
+    <img src="{{ url_for('static', filename='img/TextTitans_Modern.png') }}" alt="Nome" class="img-Nome">
+
+    <nav>
+        <ul>
+            <li> 
+                <form action="{{ url_for('logout') }}" method="POST">
+                    <button type="submit" class="button_Log">Log-out</button>
+                </form> 
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<h1 class="welcome">Bem vind@, {{ username }}!</h1>
 {% endblock %}

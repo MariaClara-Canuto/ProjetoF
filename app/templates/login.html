@@ -1,12 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Login</h1>
-<form method="POST">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    <button type="submit">Login</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="FireFox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/icon" href="{{ url_for('static', filename='img/HelmetTigas.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<div class="login-container">
+    <div>
+        <img src="{{ url_for('static', filename='img/TextTitans_ModernW.svg') }}" alt="Elmo" class="img-Elmo">
+        
+    </div>
+    <form class="login-form" id="loginForm" method = 'POST'>
+        <div class="input-group">
+            <label for="username">
+                <h1>Usuário<br></h1>
+            </label>
+            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="password">
+                <h1>Senha<br></h1>
+            </label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </div>
+
+        <div class="input-group">
+            <p>Não tem conta? </p><a href="{{ url_for('register') }}">Registre-se! </a>
+        </div>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
 {% endblock %}
