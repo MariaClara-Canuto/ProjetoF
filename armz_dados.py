@@ -10,11 +10,11 @@ class DataRecord:
             current_dir = os.path.dirname(os.path.abspath(__file__))
             json_path = os.path.join(current_dir, "..", "controllers", "db", "user_accounts.json")
             
-            with open(json_path, "r") as arquivo_json:
+            with open(json_path, "r", encoding="utf-8") as arquivo_json:
                 user_data = json.load(arquivo_json)
                 self.user_accounts = [UserAccount(**data) for data in user_data]
                 self.limit = len(self.user_accounts) - 1
-        except FileNotFoundError:
+        except (FileNotFoundError, json.JSONDecodeError):
             self.user_accounts.append(UserAccount('Guest', '000000'))
             self.limit = 0
 
