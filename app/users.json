@@ -1,0 +1,10 @@
+{
+    "joao": {
+        "password": "hashed_password_123",
+        "is_special": false
+    },
+    "admin": {
+        "password": "hashed_password_456",
+        "is_special": true
+    }
+}
