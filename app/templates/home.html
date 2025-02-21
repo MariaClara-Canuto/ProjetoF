@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome, {{ username }}!</h1>
+
+{% if users.get(username, {}).get('is_special', False) %}
+    <a href="{{ url_for('post') }}">Create a Post</a>
+{% endif %}
+
+<h2>Posts</h2>
+{% if posts %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <strong>{{ post.username }}</strong>: {{ post.content }}
+                <div id="comentarios-{{ post.id }}">
+                    {% if post.comentarios %}
+                        {% for comentario in post.comentarios %}
+                            <div>
+                                <strong>{{ comentario.username }}</strong>: {{ comentario.comentario }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <form id="form-comentario-{{ post.id }}" onsubmit="return false;">
+                    <input type="text" id="comentario-{{ post.id }}" placeholder="Add a comment">
+                    <button type="button" onclick="enviarComentario('{{ post.id }}')">Comment</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts yet.</p>
+{% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    // Função para enviar um comentário
+    function enviarComentario(postId) {
+        const comentario = document.getElementById(`comentario-${postId}`).value;
+        if (comentario.trim() === '') return;
+
+        socket.emit('comentar', {
+            post_id: postId,
+            comentario: comentario
+        });
+
+        document.getElementById(`comentario-${postId}`).value = '';
+    }
+
+    // Receber novos comentários
+    socket.on('novo_comentario', function(data) {
+        const comentariosDiv = document.getElementById(`comentarios-${data.post_id}`);
+        const novoComentario = document.createElement('div');
+        novoComentario.innerHTML = `<strong>${data.username}</strong>: ${data.comentario}`;
+        comentariosDiv.appendChild(novoComentario);
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{
+    "joao": {
+        "password": "hashed_password_123",
+        "is_special": false
+    },
+    "admin": {
+        "password": "hashed_password_456",
+        "is_special": true
+    },
+    "julia": {
+        "password": "$2b$12$gklQxAsXyfQe0J8rzjW3ourEtiM9gULpjXM8QJ3zKbmmHOXi/P.xK",
+        "is_special": false
+    },
+    "campos": {
+        "password": "$2b$12$gQoK6gMxD9CbTR8LTeu5Z.0vuqjRJZ8UM7bsgvgHS6y.0iOvaeu7S",
+        "is_special": true
+    },
+    "guilherme": {
+        "password": "$2b$12$E4c5IpASFgUeJw5TqRf30OsuxlFmCDbV4vbzTa95y5ITZP2ZxqWiq",
+        "is_special": true
+    },
+    "erik": {
+        "password": "$2b$12$NlJ4Cuo11zWZGDlkWeIJvO0NGA5I8xPhC3KaJISpbIUrbN7A6YoGG",
+        "is_special": false
+    }
+}
